@@ -9,6 +9,12 @@ function getHeaderTemplate() {
                 <span></span>
                 <span></span>
             </button>
+            <div class="header_menu" id="headerMenu">
+                <a href="#burger" onclick="closeMenu()">Burger & Sandwiches</a>
+                <a href="#pizza" onclick="closeMenu()">Pizza</a>
+                <a href="#salad" onclick="closeMenu()">Salad</a>
+
+            </div>
         </div>
-    `
+    `;
 }

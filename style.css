@@ -10,6 +10,7 @@
 
 
 .header_inner{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,6 +39,50 @@
     height: 3px;
     background-color: white;
     border-radius: 5px;
+}
+
+
+.header_menu{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    top: 65px;
+    right: 40px;
+    padding: 10px;
+    background-color: rgba(54, 53, 52, 1);
+    color: white;
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    z-index: 1;
+    transition: 
+    opacity 0.5s ease
+    transform 0.5s ease
+    visibility 0.5s;
+}
+
+
+.header_menu_open{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+.header_menu a{
+    font-size: 14px;
+    font-family: 'Palanquin';
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    padding: 14px;
+}
+
+
+.header_menu a:hover{
+    background-color: rgba(231, 108, 31, 1);
 }
 
 
