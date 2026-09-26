@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Bestell App</title>
+
+    <link rel="stylesheet" href="./styles/standars.css">
+    <link rel="stylesheet" href="./styles/font.css">
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/basket.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="./scripts/db.js"></script>
+    <script src="./scripts/template.js"></script>
+    <script src="./script.js"></script>
+</head>
+
+
+<body onload="init()">
+
+    <!-- Header wird mit JavaScript gefüllt -->
+    <header class="header" id="header"></header>
+ 
+
+    <main class="main-content">
+
+        <!-- Hero + Restaurant Informationen -->
+        <section class="restaurant" id="restaurant"></section>
+
+
+        <div class="shop-area">
+
+            <!-- Kategorien + Produkte -->
+            <section class="products" id="products"></section>
+
+
+            <!-- Desktop Warenkorb -->
+            <div class="basket-column">
+
+                <aside class="basket" id="basket"></aside>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Abdunklung hinter mobilem Warenkorb -->
+    <div class="basketOverlay" id="basketOverlay"></div>
+
+
+    <!-- Mobile Navigation -->
+    <nav class="mobileNavigation" id="mobileNavigation"></nav>
+
+
+    <!-- Bestellbestätigung -->
+    <div class="orderConfirmation" id="orderConfirmation"></div>
+
+
+    <!-- Footer wird mit JavaScript gefüllt -->
+    <footer class="footer" id="footer"></footer>
+
+</body>
+
+</html>
