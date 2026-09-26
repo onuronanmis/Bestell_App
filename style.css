@@ -86,3 +86,90 @@
 }
 
 
+.main_content{
+    width: 100%;
+    min-height: 100dvh;
+}
+
+
+.restaurant{
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+
+.hero{
+    max-width: 100%;
+}
+
+
+.hero_image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.restaurant_info{
+    position: relative;
+    min-height: 200px;
+    padding: 110px 20px 35px;
+    text-align: center;
+}
+
+
+.restaurant_logo{
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.restaurant_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.restaurant_title h1{
+    font-size: 48px;
+    font-family: 'Palanquin Dark';
+    font-style: normal;
+    font-weight: 700;
+}
+
+
+.restaurant_title span{
+    color: rgba(231, 108, 31, 1);
+}
+
+
+.restaurant_rating{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 20px;
+}
+
+
+.star{
+    color: rgba(231, 108, 31, 1);
+    
+}
+
+
+.restaurant_info p{
+    margin-top: 10px;
+    font-size: 24px;
+    font-family: 'Palanquin';
+    font-style: normal;
+    font-weight: 700;
+}
+
+
+
+
