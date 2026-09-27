@@ -106,9 +106,23 @@ function getBasketTemplate() {
             <p>Nothing here yet. <br>Go ahead and choose something delicious!</p>
             <img class="empty_cart_icon" src="./assets/icons/basket.svg" alt="Empty basket">
         </div>
-        <div class="basket_items" id="basketItems">
-
-        </div>
+        <div class="basket_items" id="basketItems"></div>
+        <section class="basket_summary" id="basketSummary">
+            <div class="summary_row">
+                <span>Subtotal</span>
+                <span id="subtotal">0,00€</span>
+            </div>
+            <div class="summary_row">
+                <span>Delivery fee</span>
+                <span>4,99€</span>
+            </div>
+            <div class="summary_line"></div>
+            <div class="summary_row summary_total">
+                <strong>Total</strong>
+                <strong id="total">0,00€</strong>
+            </div>
+            <button class="buy_button" type="button">Buy now</button>
+        </section>
     `;
 }
 

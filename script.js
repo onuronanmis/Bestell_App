@@ -1,5 +1,6 @@
 
 const basket = [];
+const deliveryFee = 4.99;
 
 function init() {
     renderStaticContent();
@@ -87,15 +88,30 @@ function getBasketItem(productId) {
 function renderBasket() {
     let basketItems = document.getElementById("basketItems");
     let basketEmpty = document.getElementById("basketEmpty");
+    let basketSummary = document.getElementById("basketSummary");
     basketItems.innerHTML = "";
     if (basket.length == 0) {
         basketEmpty.style.display = "flex";
+        basketSummary.style.display = "none"
     } else {
         basketEmpty.style.display = "none";
+        basketSummary.style.display = "block"
         for (let index = 0; index < basket.length; index++) {
             basketItems.innerHTML += getBasketItemsTemplate(basket[index]);
         }
     }
+    updateBasketPrice();
+}
+
+
+function updateBasketPrice() {
+    let subtotal = 0;
+    for (let index = 0; index < basket.length; index++) {
+        subtotal += basket[index].price * basket[index].amount;
+    }
+    let total = subtotal + deliveryFee;
+    document.getElementById("subtotal").textContent = formatPrice(subtotal);
+    document.getElementById("total").textContent = formatPrice(total);
 }
 
 
