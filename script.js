@@ -1,5 +1,5 @@
 
-//init
+const basket = [];
 
 function init() {
     renderStaticContent();
@@ -50,6 +50,36 @@ function formatPrice(price) {
 }
 
 
+function addToBasket(productId) {
+    let basketItem = getBasketItem(productId);
+    if (basketItem) {
+        basketItem.amount++;
+        console.log(basket);
+        return;
+    }
+    for (let index = 0; index < products.length; index++) {
+        if (products[index].id == productId) {
+            basket.push({
+                id: products[index].id,
+                name: products[index].name,
+                price: products[index].price,
+                amount: 1
+            })
+            console.log(basket);
+            return;
+        }
+    }
+}
+
+
+function getBasketItem(productId) {
+    for (let index = 0; index < basket.length; index++) {
+        if (basket[index].id == productId) {
+            return basket[index];
+        }
+    }
+    return null;
+}
 
 
 

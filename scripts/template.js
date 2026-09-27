@@ -61,7 +61,7 @@ function getAllCategoriesTemplate() {
     return /*html*/`
         ${getCategoryTemplate(
             "burger",
-            "Burger",
+            "Burger & Sandwiches",
             "./assets/icons/Chanese 1.svg"
         )}
 
@@ -90,9 +90,12 @@ function getProductTemplate(product) {
             </div>
             <div class="product_action">
                 <strong>${formatPrice(product.price)}</strong>
-                <button class="add_button" type="button">Add to basket</button>
+                <button class="add_button" onclick="addToBasket(${product.id})" type="button">Add to basket</button>
             </div>
         </article>
     `;
 }
+
+
+
 
