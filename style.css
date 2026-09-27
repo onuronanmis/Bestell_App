@@ -172,9 +172,19 @@
 
 
 .shop_area{
+    position: relative;
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
+}
+
+
+.basket_column {
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    bottom: 0;
+    width: 330px;
 }
 
 
@@ -299,5 +309,6 @@
     color: white;
     background-color: rgba(231, 108, 31, 1);
 }
+
 
 

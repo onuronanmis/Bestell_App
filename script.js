@@ -12,6 +12,7 @@ function renderStaticContent() {
     document.getElementById("header").innerHTML = getHeaderTemplate();
     document.getElementById("restaurant").innerHTML = getRestaurantTemplate();
     document.getElementById("products").innerHTML = getAllCategoriesTemplate();
+    document.getElementById("basket").innerHTML = getBasketTemplate();
 }
 
 

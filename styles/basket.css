@@ -1,0 +1,33 @@
+
+
+.basket {
+    width: 330px;
+    height: 540px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    color: white;
+    background-color: rgba(54, 53, 52, 1);
+}
+
+
+.basket_header {
+    min-height: 40px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.basket_header h2 {
+    font-family: 'Palanquin';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    color: white;
+}
+
+

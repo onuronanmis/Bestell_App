@@ -97,5 +97,13 @@ function getProductTemplate(product) {
 }
 
 
+function getBasketTemplate() {
+    return /*html*/`
+        <div class="basket_header">
+            <h2>Your Basket</h2>
+        </div>
+    `;
+}
+
 
 
