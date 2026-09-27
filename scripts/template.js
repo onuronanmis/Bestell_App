@@ -102,6 +102,32 @@ function getBasketTemplate() {
         <div class="basket_header">
             <h2>Your Basket</h2>
         </div>
+        <div class="basket_empty" id="basketEmpty">
+            <p>Nothing here yet. <br>Go ahead and choose something delicious!</p>
+            <img class="empty_cart_icon" src="./assets/icons/basket.svg" alt="Empty basket">
+        </div>
+        <div class="basket_items" id="basketItems">
+
+        </div>
+    `;
+}
+
+
+function getBasketItemsTemplate(item){
+    let itemTotal = item.price * item.amount;
+    return/*html*/`
+        <div class="basket_item">
+            <strong class="basket_item_name">${item.name}</strong>
+            <div class="basket_item_bottom">
+                <div class="quantity_controls">
+                    <button onclick="decreaseAmount(${item.id})" type="button">-</button>
+                    <span>${item.amount}</span>
+                    <button onclick="increaseAmount(${item.id})" type="button">+</button>
+                </div>
+                <strong class="basket_item_price">${formatPrice(itemTotal)}</strong>
+                <button class="trash_button"onclick="removeFromBasket(${item.id})"type="button"><img src="./assets/icons/delete.svg"alt="Remove"></button>
+            </div>
+        </div>
     `;
 }
 

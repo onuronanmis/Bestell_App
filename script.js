@@ -4,6 +4,7 @@ const basket = [];
 function init() {
     renderStaticContent();
     renderProducts();
+    renderBasket();
 
 }
 
@@ -55,7 +56,7 @@ function addToBasket(productId) {
     let basketItem = getBasketItem(productId);
     if (basketItem) {
         basketItem.amount++;
-        console.log(basket);
+        renderBasket();
         return;
     }
     for (let index = 0; index < products.length; index++) {
@@ -66,7 +67,7 @@ function addToBasket(productId) {
                 price: products[index].price,
                 amount: 1
             })
-            console.log(basket);
+            renderBasket();
             return;
         }
     }
@@ -80,6 +81,54 @@ function getBasketItem(productId) {
         }
     }
     return null;
+}
+
+
+function renderBasket() {
+    let basketItems = document.getElementById("basketItems");
+    let basketEmpty = document.getElementById("basketEmpty");
+    basketItems.innerHTML = "";
+    if (basket.length == 0) {
+        basketEmpty.style.display = "flex";
+    } else {
+        basketEmpty.style.display = "none";
+        for (let index = 0; index < basket.length; index++) {
+            basketItems.innerHTML += getBasketItemsTemplate(basket[index]);
+        }
+    }
+}
+
+
+function increaseAmount(productId) {
+    let basketItem = getBasketItem(productId);
+    if (basketItem) {
+        basketItem.amount++;
+        renderBasket();
+    }
+}
+
+
+function decreaseAmount(productId) {
+    let basketItem = getBasketItem(productId);
+    if (basketItem) {
+        basketItem.amount--;
+        if (basketItem.amount <= 0) {
+            removeFromBasket(productId);
+            return;
+        }
+        renderBasket();
+    }
+}
+
+
+function removeFromBasket(productId) {
+    for (let index = 0; index < basket.length; index++) {
+        if (basket[index].id == productId) {
+            basket.splice(index, 1);
+            renderBasket();
+            return;
+        }
+    }
 }
 
 
