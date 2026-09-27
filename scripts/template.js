@@ -41,3 +41,58 @@ function getRestaurantTemplate() {
     `;
 }
 
+
+function getCategoryTemplate(category, title, icon) {
+    return /*html*/`
+        <section class="category" id="${category}">
+            <div class="category_bar">
+                <div class="category_bar_inner">
+                    <img class="category_icon" src="${icon}" alt="${title}">
+                    <h2>${title}</h2>
+                </div>
+            </div>
+            <div class="category_products" id="${category}Products"></div>
+        </section>
+    `;
+}
+
+
+function getAllCategoriesTemplate() {
+    return /*html*/`
+        ${getCategoryTemplate(
+            "burger",
+            "Burger",
+            "./assets/icons/Chanese 1.svg"
+        )}
+
+        ${getCategoryTemplate(
+            "pizza",
+            "Pizza",
+            "./assets/icons/pizza 1.svg"
+        )}
+
+        ${getCategoryTemplate(
+            "salad",
+            "Salad",
+            "./assets/icons/salad 1.svg"
+        )}
+    `;
+}
+
+
+function getProductTemplate(product) {
+    return /*html*/`
+        <article class="product_card">
+            <img class="product_image" src="${product.image}" alt="${product.name}">
+            <div class="product_info">
+                <h3>${product.name}</h3>
+                <small>${product.description}</small>
+            </div>
+            <div class="product_action">
+                <strong>${formatPrice(product.price)}</strong>
+                <button class="add_button" type="button">Add to basket</button>
+            </div>
+        </article>
+    `;
+}
+

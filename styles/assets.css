@@ -12,3 +12,23 @@
     object-fit: cover;
 }
 
+
+.category_icon{
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    transform: translateY(-9px);
+}
+
+
+.product_image {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+
+
+
