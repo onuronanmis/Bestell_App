@@ -1,37 +1,56 @@
 
 
-.header_logo{
-    width: 90px;
+.header-logo {
+    width: 85px;
     height: auto;
 }
 
 
-.restaurant_logo{
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
-
-
-.category_icon{
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-    transform: translateY(-9px);
-}
-
-
-.product_image {
-    width: 200px;
+.restaurant-logo {
+    width: 120px;
     height: 120px;
     object-fit: cover;
-    border-radius: 12px;
-    flex-shrink: 0;
+    border: 5px solid white;
+    border-radius: 50%;
 }
 
 
-.trash_button img {
+.category-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+
+.product-image {
+    width: 155px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+
+.empty-cart-icon {
+    width: 55px;
+    height: 55px;
+}
+
+
+.trash-button img {
     width: 18px;
     height: 18px;
 }
 
+
+#mobileNavigation img {
+    width: 26px;
+    height: 26px;
+}
+
+
+.delivery-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    object-fit: contain;
+}

@@ -1,19 +1,34 @@
 
-
-.basket {
+#basket {
+    position: sticky;
+    top: 20px;
+    z-index: 500;
     width: 330px;
     height: 540px;
     padding: 22px;
     display: flex;
     flex-direction: column;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border-radius: 15px;
     color: white;
     background-color: rgba(54, 53, 52, 1);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
 }
 
 
-.basket_header {
+#basket.basket-open {
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+.basket-header {
+    position: relative;
     min-height: 40px;
     margin-bottom: 15px;
     display: flex;
@@ -22,16 +37,27 @@
 }
 
 
-.basket_header h2 {
+.basket-header h2 {
+    font-size: 32px;
     font-family: 'Palanquin';
     font-style: normal;
     font-weight: 700;
-    font-size: 32px;
-    color: white;
 }
 
 
-.basket_empty {
+.basket-close {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 30px;
+    height: 30px;
+    color: white;
+    background-color: transparent;
+    font-size: 26px;
+}
+
+
+.basket-empty {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -39,61 +65,56 @@
     justify-content: center;
     gap: 25px;
     text-align: center;
-    font-size: 12px;
+    font-size: 20px;
     line-height: 1.5;
-}
-
-
-.basket_empty p {
     font-family: 'Palanquin';
     font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    color: white;
+    font-weight: 700;
 }
 
 
-.basket_items {
+.basket-items {
     max-height: 285px;
     overflow-y: auto;
     padding-right: 5px;
 }
 
 
-.basket_item {
+.basket-item {
     min-height: 80px;
     margin-bottom: 10px;
     padding: 12px;
     border-radius: 9px;
+    color: rgba(54, 53, 52, 1);
     background-color: rgba(253, 234, 220, 1);
 }
 
 
-.basket_item_name {
+.basket-item-name {
     display: block;
     margin-bottom: 12px;
-    font-family: 'Palanquin';
-    font-style: normal;
-    font-weight: 700;
     font-size: 20px;
+    font-family: 'Palanquin';
+     font-style: normal;
+     font-weight: 700;
 }
 
 
-.basket_item_bottom {
+.basket-item-bottom {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 
-.quantity_controls {
+.quantity-controls {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
 
-.quantity_controls button {
+.quantity-controls button {
     width: 23px;
     height: 23px;
     display: flex;
@@ -106,21 +127,21 @@
 }
 
 
-.quantity_controls span {
+.quantity-controls span {
     min-width: 15px;
     text-align: center;
     font-size: 12px;
 }
 
 
-.basket_item_price {
+.basket-item-price {
     margin-left: auto;
     white-space: nowrap;
     font-size: 20px;
 }
 
 
-.trash_button {
+.trash-button {
     width: 24px;
     height: 24px;
     display: flex;
@@ -131,37 +152,25 @@
 }
 
 
-.basket_summary {
+.basket-summary {
     margin-top: auto;
     padding-top: 15px;
 }
 
 
-.basket {
-    display: flex;
-    flex-direction: column;
-}
-
-
-.summary_row {
+.summary-row {
     margin-bottom: 7px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: 'Palanquin';
-    font-style: normal;
-    font-weight: 600;
     font-size: 20px;
+    font-family: 'Palanquin';
+     font-style: normal;
+     font-weight: 700;
 }
 
 
-.summary_row span,
-.summary_row strong {
-    color: white;
-}
-
-
-.summary_line {
+.summary-line {
     width: 100%;
     height: 1px;
     margin: 10px 0;
@@ -169,21 +178,138 @@
 }
 
 
-.summary_total {
+.summary-total {
     font-size: 22px;
-}
-
-
-.buy_button {
-    width: 100%;
-    margin-top: 13px;
-    border-radius: 25px;
-    color: white;
-    background-color: rgba(231, 108, 31, 1);
     font-family: 'Palanquin';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
 }
 
 
+.buy-button {
+    width: 100%;
+    margin-top: 13px;
+    padding: 12px;
+    border-radius: 25px;
+    color: white;
+    background-color: rgba(231, 108, 31, 1);
+    font-size: 28px;
+    font-family: 'Palanquin';
+    font-style: normal;
+    font-weight: 700;
+}
+
+
+#basketOverlay {
+    display: none;
+}
+
+
+#orderConfirmation {
+    position: fixed;
+    inset: 0;
+    z-index: 4000;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.55);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+
+#orderConfirmation.confirmation-visible {
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.confirmation-box {
+    position: relative;
+    width: 430px;
+    max-width: 100%;
+    padding: 50px 30px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    background-color: rgba(54, 53, 52, 1);
+}
+
+
+.confirmation-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 35px;
+    height: 35px;
+    color: white;
+    background-color: transparent;
+    font-size: 28px;
+}
+
+
+.confirmation-box h2 {
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 768px) {
+
+
+    #basketOverlay {
+        position: fixed;
+        inset: 0 0 64px 0;
+        z-index: 2500;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        visibility: hidden;
+        transition:opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+
+    #basketOverlay.basket-overlay-visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    #basket {
+        position: fixed;
+        top: auto;
+        left: 0;
+        right: 0;
+        bottom: 64px;
+        z-index: 3000;
+        width: 100%;
+        height: 70vh;
+        max-height: 600px;
+        border-radius: 18px 18px 0 0;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform:translateY(calc(100% + 64px));
+        transition:transform 0.35s ease;
+    }
+
+
+    #basket.basket-open {
+        transform: translateY(0);
+    }
+
+
+    .basket-items {
+        max-height: none;
+        flex: 1;
+        overflow-y: auto;
+    }
+
+
+    .confirmation-box {
+        width: 330px;
+    }
+}
