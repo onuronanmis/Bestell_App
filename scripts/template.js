@@ -4,7 +4,7 @@ function getHeaderTemplate() {
     return /*html*/`
         
         <div class="header-inner">
-            <img class="header-logo" src="assets/icons/logo02.webp" alt="Bestell App">
+            <img class="header-logo" src="./assets/icons/Logo02.webp" alt="Bestell App">
             <button class="menu-button" onclick="toggleMenu()" type="button" aria-label="Open menu">
                 <span></span>
                 <span></span>
@@ -133,9 +133,9 @@ function getBasketItemTemplate(item) {
             <strong class="basket-item-name">${item.name}</strong>
             <div class="basket-item-bottom">
                 <div class="quantity-controls">
-                    <button onclick="changeAmount(${item.id})" type="button">−</button>
+                    <button onclick="changeAmount(${item.id}, -1)" type="button">−</button>
                     <span>${item.amount}</span>
-                    <button onclick="changeAmount(${item.id})"type="button">+</button>
+                    <button onclick="changeAmount(${item.id}, 1)"type="button">+</button>
                 </div>
                 <strong class="basket-item-price">
                     ${formatPrice(itemTotal)}

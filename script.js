@@ -13,9 +13,9 @@ function renderStaticContent() {
     document.getElementById("header").innerHTML = getHeaderTemplate();
     document.getElementById("restaurant").innerHTML = getRestaurantTemplate();
     document.getElementById("products").innerHTML =
-        getCategoryTemplate("burger","Burger","assets/icons/chanese1.webp")+
-        getCategoryTemplate("pizza","Pizza","assets/icons/pizza1.webp")+
-        getCategoryTemplate("salad","Salad","assets/icons/salad1.webp");
+        getCategoryTemplate("burger", "Burger", "./assets/icons/Chanese1.webp")+
+        getCategoryTemplate("pizza", "Pizza", "./assets/icons/Pizza1.webp")+
+        getCategoryTemplate("salad", "Salad", "./assets/icons/Salad1.webp");
     document.getElementById("basket").innerHTML = getBasketTemplate();
     document.getElementById("mobileNavigation").innerHTML = getMobileNavigationTemplate();
     document.getElementById("orderConfirmation").innerHTML = getConfirmationTemplate();
@@ -76,14 +76,18 @@ function addToBasket(productId) {
 
 function changeAmount(productId, change) {
     const item = basket.find(item => item.id === productId);
+
     if (!item) {
         return;
     }
+
     item.amount += change;
+
     if (item.amount <= 0) {
         removeFromBasket(productId);
         return;
     }
+
     renderProducts();
     renderBasket();
 }
