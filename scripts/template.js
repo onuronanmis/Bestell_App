@@ -4,7 +4,7 @@ function getHeaderTemplate() {
     return /*html*/`
         
         <div class="header-inner">
-            <img class="header-logo" src="./assets/icons/logo 02.svg" alt="Bestell App">
+            <img class="header-logo" src="./assets/icons/logo02.webp" alt="Bestell App">
             <button class="menu-button" onclick="toggleMenu()" type="button" aria-label="Open menu">
                 <span></span>
                 <span></span>
