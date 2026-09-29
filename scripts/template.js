@@ -133,9 +133,9 @@ function getBasketItemTemplate(item) {
             <strong class="basket-item-name">${item.name}</strong>
             <div class="basket-item-bottom">
                 <div class="quantity-controls">
-                    <button onclick="decreaseAmount(${item.id})" type="button">−</button>
+                    <button onclick="changeAmount(${item.id})" type="button">−</button>
                     <span>${item.amount}</span>
-                    <button onclick="increaseAmount(${item.id})"type="button">+</button>
+                    <button onclick="changeAmount(${item.id})"type="button">+</button>
                 </div>
                 <strong class="basket-item-price">
                     ${formatPrice(itemTotal)}

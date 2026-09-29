@@ -1,15 +1,6 @@
-:root {
-    --orange: #ef6c16;
-    --dark: #353331;
-    --cream: #fff0e5;
-}
 
 
-/* =========================
-   HEADER
-========================= */
-
-#header {
+.header {
     width: 100%;
     background-color: rgba(231, 108, 31, 1);
 }
@@ -91,12 +82,12 @@
 
 .main-content {
     width: 100%;
-    min-height: 100dvh;
+    min-height: calc(100vh - 220px);
     background-color: white;
 }
 
 
-#restaurant {
+.restaurant {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
@@ -185,7 +176,7 @@
 }
 
 
-#products {
+.products {
     width: 100%;
 }
 
@@ -198,9 +189,10 @@
 
 .category-bar {
     position: relative;
+    display: flex;
     left: 50%;
-    width: 100vw;
-    height: 58px;
+    width: 98vw;
+    height: 50px;
     transform: translateX(-50%);
     background-color: rgba(231, 108, 31, 1);
 }
@@ -300,11 +292,14 @@
     padding: 6px 9px;
     border-radius: 20px;
     background-color: white;
-    font-size: 16px;
+    font-size: smaller;
     white-space: nowrap;
     font-family: 'Palanquin';
     font-style: normal;
-    font-weight: 600;}
+    font-weight: 600;
+    width: 100px;
+}
+    
 
 
 .add-button:hover {
@@ -323,7 +318,7 @@
 }
 
 
-#footer {
+.footer {
     width: 100%;
     background-color: rgba(231, 108, 31, 1);
 }
@@ -344,7 +339,7 @@
 }
 
 
-#mobileNavigation {
+.mobileNavigation {
     display: none;
 }
 
@@ -444,6 +439,7 @@
 
     .category-bar {
         height: 50px;
+        width: 94vw;
     }
 
 
@@ -560,7 +556,7 @@
     }
 
 
-    #mobileNavigation {
+    .mobileNavigation {
         position: fixed;
         left: 0;
         right: 0;
@@ -575,7 +571,7 @@
     }
 
 
-    #mobileNavigation button {
+    .mobileNavigation button {
         position: relative;
         width: 48px;
         height: 48px;
@@ -587,7 +583,7 @@
     }
 
 
-    #mobileNavigation img {
+    .mobileNavigation img {
         width: 26px;
         height: 26px;
         object-fit: contain;

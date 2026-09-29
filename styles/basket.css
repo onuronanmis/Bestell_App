@@ -1,10 +1,10 @@
 
-#basket {
+.basket {
     position: sticky;
     top: 20px;
     z-index: 500;
     width: 330px;
-    height: 540px;
+    height: 640px;
     padding: 22px;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@
 }
 
 
-#basket.basket-open {
+.basket.basket-open {
     pointer-events: auto;
     opacity: 1;
     visibility: visible;
@@ -74,7 +74,7 @@
 
 
 .basket-items {
-    max-height: 285px;
+    max-height: 315px;
     overflow-y: auto;
     padding-right: 5px;
 }
@@ -200,12 +200,12 @@
 }
 
 
-#basketOverlay {
+.basketOverlay {
     display: none;
 }
 
 
-#orderConfirmation {
+.orderConfirmation {
     position: fixed;
     inset: 0;
     z-index: 4000;
@@ -221,7 +221,7 @@
 }
 
 
-#orderConfirmation.confirmation-visible {
+.orderConfirmation.confirmation-visible {
     pointer-events: auto;
     opacity: 1;
     visibility: visible;
@@ -260,7 +260,7 @@
 @media (max-width: 768px) {
 
 
-    #basketOverlay {
+    .basketOverlay {
         position: fixed;
         inset: 0 0 64px 0;
         z-index: 2500;
@@ -272,13 +272,13 @@
     }
 
 
-    #basketOverlay.basket-overlay-visible {
+    .basketOverlay.basket-overlay-visible {
         opacity: 1;
         visibility: visible;
     }
 
 
-    #basket {
+    .basket {
         position: fixed;
         top: auto;
         left: 0;
@@ -297,7 +297,7 @@
     }
 
 
-    #basket.basket-open {
+    .basket.basket-open {
         transform: translateY(0);
     }
 

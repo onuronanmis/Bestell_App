@@ -1,6 +1,6 @@
 const basket = [];
-
 const deliveryFee = 4.99;
+
 
 function init() {
     renderStaticContent();
@@ -13,23 +13,9 @@ function renderStaticContent() {
     document.getElementById("header").innerHTML = getHeaderTemplate();
     document.getElementById("restaurant").innerHTML = getRestaurantTemplate();
     document.getElementById("products").innerHTML =
-        getCategoryTemplate(
-            "burger",
-            "Burger",
-            "./assets/icons/chanese 1.svg"
-        )
-        +
-        getCategoryTemplate(
-            "pizza",
-            "Pizza",
-            "./assets/icons/pizza 1.svg"
-        )
-        +
-        getCategoryTemplate(
-            "salad",
-            "Salad",
-            "./assets/icons/salad 1.svg"
-        );
+        getCategoryTemplate("burger","Burger","./assets/icons/chanese1.svg")+
+        getCategoryTemplate("pizza","Pizza","./assets/icons/pizza1.svg")+
+        getCategoryTemplate("salad","Salad","./assets/icons/salad1.svg");
     document.getElementById("basket").innerHTML = getBasketTemplate();
     document.getElementById("mobileNavigation").innerHTML = getMobileNavigationTemplate();
     document.getElementById("orderConfirmation").innerHTML = getConfirmationTemplate();
@@ -80,11 +66,7 @@ function addToBasket(productId) {
     if (basketItem) {
         basketItem.amount++;
     } else {
-        basket.push({
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            amount: 1});
+        basket.push({ id: product.id, name: product.name, price: product.price, amount: 1});
     }
     renderProducts();
     renderBasket();
@@ -92,25 +74,12 @@ function addToBasket(productId) {
 }
 
 
-function increaseAmount(productId) {
-
+function changeAmount(productId, change) {
     const item = basket.find(item => item.id === productId);
     if (!item) {
         return;
     }
-    item.amount++;
-    renderProducts();
-    renderBasket();
-}
-
-
-
-function decreaseAmount(productId) {
-    const item = basket.find(item => item.id === productId);
-    if (!item) {
-        return;
-    }
-    item.amount--;
+    item.amount += change;
     if (item.amount <= 0) {
         removeFromBasket(productId);
         return;
@@ -152,19 +121,14 @@ function renderBasket() {
 
 function updateBasketPrice() {
     let subtotal = 0;
-
-    basket.forEach(item => {
-        subtotal += item.price * item.amount;
-        });
-
     let total = 0;
-
+    const buyButton = document.querySelector(".buy-button");
+    basket.forEach(item => {subtotal += item.price * item.amount;});
     if (basket.length > 0) {
         total = subtotal + deliveryFee;
     }
     document.getElementById("subtotal").textContent = formatPrice(subtotal);
     document.getElementById("total").textContent = formatPrice(total);
-    const buyButton = document.querySelector(".buy-button");
     if (basket.length > 0) {
         buyButton.textContent = `Buy now (${formatPrice(total)})`;
     } else {
