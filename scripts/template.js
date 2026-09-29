@@ -4,7 +4,7 @@ function getHeaderTemplate() {
     return /*html*/`
         
         <div class="header-inner">
-            <img class="header-logo" src="./assets/icons/logo02.webp" alt="Bestell App">
+            <img class="header-logo" src="assets/icons/logo02.webp" alt="Bestell App">
             <button class="menu-button" onclick="toggleMenu()" type="button" aria-label="Open menu">
                 <span></span>
                 <span></span>
@@ -24,10 +24,10 @@ function getRestaurantTemplate() {
     return /*html*/`
         
         <div class="hero">
-            <img class="hero-image" src="./assets/img/hero.webp" alt="Burger and Pizza">
+            <img class="hero-image" src="assets/img/hero.webp" alt="Burger and Pizza">
         </div>
         <div class="restaurant-info">
-            <img class="restaurant-logo" src="./assets/img/logo.webp" alt="Burger House">
+            <img class="restaurant-logo" src="assets/img/logo.webp" alt="Burger House">
             <div class="restaurant-title">
                 <h1><span>Burger</span>House</h1>
                 <div class="restaurant-rating">

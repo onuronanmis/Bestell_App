@@ -13,9 +13,9 @@ function renderStaticContent() {
     document.getElementById("header").innerHTML = getHeaderTemplate();
     document.getElementById("restaurant").innerHTML = getRestaurantTemplate();
     document.getElementById("products").innerHTML =
-        getCategoryTemplate("burger","Burger","./assets/icons/chanese1.webp")+
-        getCategoryTemplate("pizza","Pizza","./assets/icons/pizza1.webp")+
-        getCategoryTemplate("salad","Salad","./assets/icons/salad1.webp");
+        getCategoryTemplate("burger","Burger","assets/icons/chanese1.webp")+
+        getCategoryTemplate("pizza","Pizza","assets/icons/pizza1.webp")+
+        getCategoryTemplate("salad","Salad","assets/icons/salad1.webp");
     document.getElementById("basket").innerHTML = getBasketTemplate();
     document.getElementById("mobileNavigation").innerHTML = getMobileNavigationTemplate();
     document.getElementById("orderConfirmation").innerHTML = getConfirmationTemplate();
